@@ -27,9 +27,9 @@ def main():
     while start == False:
         if body == 'start game':
             message = "Hello and welcome to Text Based Mini Games by Murray's Angels"
-            message += "\n Please enter one of the following options;"
-            message += "\n\n 'Play Hangman' - A simple game of Hangman"
-            message += "\n 'Play Survive' - Play the text based adventure game 'Survive The Midlands'"
+            message += "\n\nPlease enter one of the following options;"
+            message += "\n\n'Play Hangman' - A simple game of Hangman"
+            message += "\n'Play Survive' - Play the text based adventure game 'Survive The Midlands'"
             resp.message(message)
             start = True
             return str(resp)
@@ -48,7 +48,7 @@ def main():
         if currentGame == 'Hangman':
             HangmanInit(body)
         if currentGame == 'Survive':
-            SurviveInit()
+            SurviveInit(body)
         else:
             resp.message("Error")
 
