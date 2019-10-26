@@ -7,9 +7,23 @@ with open('words.txt') as f:
 
 action_list = []
 
+first_time = True
+word = ""
+letters = []
+
 
 def random_word():
     return lines[random.randint(0, len(lines))].lower()
+
+
+def display_letters(letters):
+    dashes = ""
+    for w in word:
+        if w in letters:
+            dashes += w
+        else:
+            dashes += "-"
+    return dashes
 
 
 def first_message(word):
@@ -17,17 +31,22 @@ def first_message(word):
         len(word)) + " letters long. \nYou currently have 10 lives left. \nEnter your first letter! \n" + LIVES[0]
 
 
-def run_game(input, word):
+def first_run():
+    if first_time:
+        global word
+        word = random_word()
+        message = first_message(word)
+        global first_time
+        first_time = False
+        return message
+
+
+def run_game(letter):
+    first_run()
     hearts = 10
-    while hearts > 0:
-        if len(input) != 1:
-            print("Please enter 1 letter")
-        else:
-            if input in word:
-                # create ---letter--- line
-                pass
-            else:
-                hearts -= 1
+    if letter in word:
+        letters.append(letter)
+        return display_letters(letters)
+    else:
+        hearts -= 1
 
-
-run_game("a", random_word())
