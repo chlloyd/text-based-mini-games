@@ -44,13 +44,13 @@ def main():
         resp.message("Thanks for playing!")
         start = False
         return str(resp)
-    else:
-        if currentGame == 'Hangman':
+
+    if currentGame == 'Hangman':
             HangmanInit(body)
-        if currentGame == 'Survive':
+    if currentGame == 'Survive':
             SurviveInit(body)
-        else:
-            resp.message("Error")
+    else:
+        resp.message("Error no game selected")
 
     return str(resp)
 
