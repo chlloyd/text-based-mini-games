@@ -22,10 +22,10 @@ def main():
     global reset
     global currentGame
     resp = MessagingResponse()
-    body = body.lower()
+    bodyLower = body.lower()
 
     if start == False:
-        if body == 'start game':
+        if bodyLower == 'start game':
             message = "Hello and welcome to Text Based Mini Games by Murray's Angels"
             message += "\n\nPlease enter one of the following options;"
             message += "\n\n'Play Hangman' - A simple game of Hangman"
@@ -37,22 +37,22 @@ def main():
             resp.message("Please enter one of the following commands; \n - 'Start Game'")
             return str(resp)
 
-    if body == 'play hangman':
+    if bodyLower == 'play hangman':
         currentGame = "Hangman"
-    elif body == 'play survive':
+    elif bodyLower == 'play survive':
         currentGame = "Survive"
-    elif body == 'reset':
+    elif bodyLower == 'reset':
         currentGame = "Nothing"
         resp.message("Thanks for playing!")
         start = False
         return str(resp)
 
     if currentGame == 'Hangman':
-            resp.message(HangmanInit(body))
+            resp.message(HangmanInit(bodyLower))
             print(resp.message)
             return str(resp)
     elif currentGame == 'Survive':
-            resp.message(SurviveInit(body))
+            resp.message(SurviveInit(bodyLower))
             print(resp.message)
             return str(resp)
     else:
