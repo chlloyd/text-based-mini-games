@@ -32,11 +32,11 @@ def first_message(word):
 
 
 def first_run():
+    global first_time
+    global word
     if first_time:
-        global word
         word = random_word()
         message = first_message(word)
-        global first_time
         first_time = False
         return message
 
