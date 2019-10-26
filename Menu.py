@@ -2,6 +2,8 @@ from flask import Flask, request, redirect
 from twilio.twiml.messaging_response import MessagingResponse
 import os
 
+from hangman import hangman
+
 app = Flask(__name__)
 
 start = False
@@ -28,8 +30,8 @@ def main():
         if bodyLower == 'start game':
             message = "Hello and welcome to Text Based Mini Games by Murray's Angels"
             message += "\n\nPlease enter one of the following options;"
-            message += "\n\n'Play Hangman' - A simple game of Hangman"
-            message += "\n'Play Survive' - Play the text based adventure game 'Survive The Midlands'"
+            message += "\n\n'/Play Hangman' - A simple game of Hangman"
+            message += "\n'/Play Survive' - Play the text based adventure game 'Survive The Midlands'"
             resp.message(message)
             start = True
             return str(resp)
@@ -37,11 +39,11 @@ def main():
             resp.message("Please enter one of the following commands; \n - 'Start Game'")
             return str(resp)
 
-    if bodyLower == 'play hangman':
+    if bodyLower == '/play hangman' and currentGame != "Survive":
         currentGame = "Hangman"
-    elif bodyLower == 'play survive':
+    elif bodyLower == '/play survive' and currentGame != "Hangman":
         currentGame = "Survive"
-    elif bodyLower == 'reset':
+    elif bodyLower == '/reset':
         currentGame = "Nothing"
         resp.message("Thanks for playing!")
         start = False
@@ -61,12 +63,12 @@ def main():
     return str(resp)
 
 def HangmanInit(UserAction):
-    print("Hangman Initialised")
-    return 'This is hangman! User Input: ' + UserAction
+    retVal = hangman.run_game(UserAction)
+    return retVal
 
 def SurviveInit(UserAction):
     print("Survive Initialised")
-    return 'This is Survive The Midlands! User Input: ' + UserAction
+    return 'This is Survive The Midlands!'
 
 
 if __name__ == "__main__":
