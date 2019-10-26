@@ -34,7 +34,7 @@ def main():
             start = True
             return str(resp)
         else:
-            resp.message("Please enter one of the following commands; \n '- Start Game'")
+            resp.message("Please enter one of the following commands; \n - 'Start Game'")
             return str(resp)
 
     if body == 'play hangman':
@@ -48,11 +48,11 @@ def main():
         return str(resp)
 
     if currentGame == 'Hangman':
-            resp.message = HangmanInit(body)
+            resp.message(HangmanInit(body))
             print(resp.message)
             return str(resp)
     elif currentGame == 'Survive':
-            resp.message = SurviveInit(body)
+            resp.message(SurviveInit(body))
             print(resp.message)
             return str(resp)
     else:
