@@ -18,15 +18,18 @@ def Start():
     # Start our TwiML response
     global start
     resp = MessagingResponse()
+    body = body.lower()
 
     while start == False:
-        if body.lower() == 'start game':
-            resp.message("Hello and welcome to Text Based Mini Games by Murray's Angels \n hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh")
+        if body == 'start game':
+            resp.message("Hello and welcome to Text Based Mini Games by Murray's Angels")
             start = True
         else:
             resp.message("Please enter one of the following commands; \n '- Start Game'")
-    #else:
-        # call games depending on options
+    else:
+        if body == 'reset':
+            resp.message("Thanks for playing!")
+            start = False
 
     return str(resp)
 
