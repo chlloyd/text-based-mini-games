@@ -29,6 +29,7 @@ def Start():
             message += "\n\n 1 - Hangman \n 2- Survive The Midlands"
             resp.message(message)
             start = True
+            return str(resp)
         else:
             resp.message("Please enter one of the following commands; \n '- Start Game'")
 
