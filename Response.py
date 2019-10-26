@@ -6,19 +6,21 @@ app = Flask(__name__)
 
 start = False
 reset = False
+currentGame = ""
 
 @app.route("/", methods=['GET'])
 def test():
     return 'hello'
 
 @app.route("/sms", methods=['GET','POST'])
-def Start():
+def main():
     """Send a dynamic reply to an incoming text message"""
     # Get the message the user sent our Twilio number
     body = request.values.get('Body', None)
     # Start our TwiML response
     global start
     global reset
+    global currentGame
     resp = MessagingResponse()
     body = body.lower()
 
@@ -26,30 +28,37 @@ def Start():
         if body == 'start game':
             message = "Hello and welcome to Text Based Mini Games by Murray's Angels"
             message += "\n Please enter one of the following options;"
-            message += "\n\n 1 - Hangman \n 2- Survive The Midlands"
+            message += "\n\n 'Play Hangman' - A simple game of Hangman"
+            message += "\n 'Play Survive' - Play the text based adventure game 'Survive The Midlands'"
             resp.message(message)
             start = True
             return str(resp)
         else:
             resp.message("Please enter one of the following commands; \n '- Start Game'")
 
-    if (body == '1'):
-        resp.message(HangmanInit())
-    elif (body == '2'):
-        resp.message(SurviveInit())
-    elif (body=='reset'):
+    if body == 'play hangman' and currentGame != 'Survive':
+        currentGame = "Hangman"
+    elif body == 'play survive' and currentGame != 'Hangman':
+        currentGame = "Survive"
+    elif body == 'reset':
         resp.message("Thanks for playing!")
         start = False
+        return str(resp)
     else:
-        resp.message("Please enter either 1 or 2!")
+        if currentGame == 'Hangman':
+            HangmanInit(body)
+        if currentGame == 'Survive':
+            SurviveInit()
+        else:
+            resp.message("Error")
 
     return str(resp)
 
-def HangmanInit():
-    return 'This is hangman!'
+def HangmanInit(UserAction):
+    return 'This is hangman! User Input: ' + UserAction
 
-def SurviveInit():
-    return 'This is Survive The Midlands!'
+def SurviveInit(UserAction):
+    return 'This is Survive The Midlands! User Input: ' + UserAction
 
 
 if __name__ == "__main__":
