@@ -5,12 +5,17 @@ from lives import LIVES
 with open('words.txt') as f:
     lines = f.read().splitlines()
 
+action_list = []
+
+
 def random_word():
     return lines[random.randint(0, len(lines))].lower()
+
 
 def first_message(word):
     return "Welcome to hangman. Your word is " + str(
         len(word)) + " letters long. \nYou currently have 10 lives left. \nEnter your first letter! \n" + LIVES[0]
+
 
 def run_game(input, word):
     hearts = 10
@@ -24,5 +29,5 @@ def run_game(input, word):
             else:
                 hearts -= 1
 
-run_game("aa", random_word())
 
+run_game("a", random_word())
