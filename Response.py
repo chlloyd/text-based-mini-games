@@ -36,9 +36,9 @@ def main():
         else:
             resp.message("Please enter one of the following commands; \n '- Start Game'")
 
-    if body == 'play hangman':
+    if body == 'play hangman' and currentGame != 'Survive':
         currentGame = "Hangman"
-    elif body == 'play survive':
+    elif body == 'play survive' and currentGame != 'Hangman':
         currentGame = "Survive"
     elif body == 'reset':
         resp.message("Thanks for playing!")
@@ -47,8 +47,10 @@ def main():
 
     if currentGame == 'Hangman':
             HangmanInit(body)
+            return str(resp)
     if currentGame == 'Survive':
             SurviveInit(body)
+            return str(resp)
     else:
         resp.message("Error no game selected")
 
