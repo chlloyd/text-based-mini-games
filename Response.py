@@ -24,7 +24,7 @@ def main():
     resp = MessagingResponse()
     body = body.lower()
 
-    while start == False:
+    if start == False:
         if body == 'start game':
             message = "Hello and welcome to Text Based Mini Games by Murray's Angels"
             message += "\n\nPlease enter one of the following options;"
@@ -34,7 +34,8 @@ def main():
             start = True
             return str(resp)
         else:
-            resp.message("Please enter one of the following commands; \n '- Start Game'") #this will never be returned!!
+            resp.message("Please enter one of the following commands; \n '- Start Game'")
+            return str(resp)
 
     if body == 'play hangman':
         currentGame = "Hangman"
