@@ -52,7 +52,7 @@ def main():
     if currentGame == 'Hangman':
             resp.message(HangmanInit(bodyLower))
             print(resp.message)
-            return str(resp)g
+            return str(resp)
     elif currentGame == 'Survive':
             resp.message(SurviveInit(bodyLower))
             print(resp.message)
