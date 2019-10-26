@@ -2,7 +2,7 @@ from flask import Flask, request, redirect
 from twilio.twiml.messaging_response import MessagingResponse
 import os
 
-#from hangman import hangman
+from hangman import hangman
 
 app = Flask(__name__)
 
