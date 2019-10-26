@@ -2,7 +2,7 @@ from flask import Flask, request, redirect
 from twilio.twiml.messaging_response import MessagingResponse
 import os
 
-from hangman import hangman
+#from hangman import hangman
 
 app = Flask(__name__)
 
@@ -27,7 +27,7 @@ def main():
     bodyLower = body.lower()
 
     if start == False:
-        if bodyLower == 'start game':
+        if bodyLower == '/start game':
             message = "Hello and welcome to Text Based Mini Games by Murray's Angels"
             message += "\n\nPlease enter one of the following options;"
             message += "\n\n'/Play Hangman' - A simple game of Hangman"
@@ -36,7 +36,7 @@ def main():
             start = True
             return str(resp)
         else:
-            resp.message("Please enter one of the following commands; \n - 'Start Game'")
+            resp.message("Please enter one of the following commands; \n - '/Start Game'")
             return str(resp)
 
     if bodyLower == '/play hangman' and currentGame != "Survive":
@@ -52,7 +52,7 @@ def main():
     if currentGame == 'Hangman':
             resp.message(HangmanInit(bodyLower))
             print(resp.message)
-            return str(resp)
+            return str(resp)g
     elif currentGame == 'Survive':
             resp.message(SurviveInit(bodyLower))
             print(resp.message)
@@ -63,7 +63,8 @@ def main():
     return str(resp)
 
 def HangmanInit(UserAction):
-    retVal = hangman.run_game(UserAction)
+    #retVal = hangman.run_game(UserAction)
+    retVal = "Hangman Initiated"
     return retVal
 
 def SurviveInit(UserAction):
