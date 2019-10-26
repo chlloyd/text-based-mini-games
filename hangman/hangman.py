@@ -2,7 +2,7 @@ import random
 
 from hangman.lives import LIVES
 
-with open('words.txt') as f:
+with open('hangman/words.txt') as f:
     lines = f.read().splitlines()
 
 action_list = []
