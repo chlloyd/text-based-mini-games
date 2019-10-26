@@ -3,7 +3,6 @@ from twilio.twiml.messaging_response import MessagingResponse
 import os
 
 app = Flask(__name__)
-start = False
 
 @app.route("/", methods=['GET'])
 def test():
@@ -15,6 +14,7 @@ def Start():
     # Get the message the user sent our Twilio number
     body = request.values.get('Body', None)
     # Start our TwiML response
+    global start
     resp = MessagingResponse()
 
     while start == False:
@@ -30,3 +30,5 @@ def Start():
 
 if __name__ == "__main__":
     app.run(debug=True, port=os.getenv('PORT', 5000), host='0.0.0.0')
+
+start = False
