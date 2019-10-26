@@ -1,6 +1,6 @@
 from flask import Flask, request, redirect
 from twilio.twiml.messaging_response import MessagingResponse
-
+import os
 app = Flask(__name__)
 
 @app.route("/", methods=['GET'])
@@ -25,4 +25,4 @@ def incoming_sms():
     return str(resp)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=os.getenv('PORT', 5000))
