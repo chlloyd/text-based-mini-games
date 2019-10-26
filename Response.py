@@ -3,14 +3,12 @@ from twilio.twiml.messaging_response import MessagingResponse
 
 app = Flask(__name__)
 
-@app.route("/", methods=['GET', 'POST'])
+@app.route("/", methods=['POST'])
 def incoming_sms():
     """Send a dynamic reply to an incoming text message"""
     # Get the message the user sent our Twilio number
     body = request.values.get('Body', None)
 
-    if request.method == 'GET':
-        return "This is working"
     # Start our TwiML response
     resp = MessagingResponse()
 
