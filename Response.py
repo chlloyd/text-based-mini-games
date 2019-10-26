@@ -41,13 +41,14 @@ def main():
     elif body == 'play survive':
         currentGame = "Survive"
     elif body == 'reset':
+        currentGame = "Nothing"
         resp.message("Thanks for playing!")
         start = False
         return str(resp)
 
     if currentGame == 'Hangman':
             resp.message = HangmanInit(body)
-            print (resp.message)
+            print(resp.message)
             return str(resp)
     elif currentGame == 'Survive':
             resp.message = SurviveInit(body)
