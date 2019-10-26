@@ -1,6 +1,6 @@
 import random
 
-from lives import LIVES
+from hangman.lives import LIVES
 
 with open('words.txt') as f:
     lines = f.read().splitlines()
