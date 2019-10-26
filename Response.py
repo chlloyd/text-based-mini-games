@@ -4,6 +4,8 @@ import os
 
 app = Flask(__name__)
 
+start = False
+
 @app.route("/", methods=['GET'])
 def test():
     return 'hello'
@@ -30,5 +32,3 @@ def Start():
 
 if __name__ == "__main__":
     app.run(debug=True, port=os.getenv('PORT', 5000), host='0.0.0.0')
-
-start = False
