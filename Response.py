@@ -46,10 +46,10 @@ def main():
         return str(resp)
 
     if currentGame == 'Hangman':
-            HangmanInit(body)
+            resp.message = HangmanInit(body)
             return str(resp)
     if currentGame == 'Survive':
-            SurviveInit(body)
+            resp.message = SurviveInit(body)
             return str(resp)
     else:
         resp.message("Error no game selected")
