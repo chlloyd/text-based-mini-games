@@ -1,8 +1,10 @@
-
+firstTurn = True
 
 def survive(a):
     name = a
-    if name=="":
+    global firstTurn
+    if firstTurn == True:
+        firstTurn = False
         return"Welcome to Jurassic Par- Wait thats copyrighted \n Welcome to HackTheMidlands \n  Your task is to take part in all of the hack the midslands without angering Tom\n Depending on your choices and options it could mean game over \n to play the game you enter the choice you would like to pick while including any previous choices , so if you pick the third choice after the first you would send 13 just type HELP for more info \n Your objective should you be bothered is to leave hackthemidlands by learning the door codes \n You have 3 options to acquire informatin \nYou can take part in the capture the flag with option 1 \nYou can take part in the seminars for option 2\nYou can work on your project for option 3 \n Finally you can try and leave the building with- option 4"
     else:
         if name=="1":
