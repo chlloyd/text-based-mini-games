@@ -32,7 +32,7 @@ def display_used_letters(used_letters):
     used_letter = ""
     print(used_letters)
     for letter in used_letters:
-        used_letter = letter + ", "
+        used_letter += letter + ", "
     return used_letter
 
 
@@ -57,6 +57,7 @@ def first_run():
 
 
 def run_game(letter):
+    letter = letter.upper()
     global hearts
     if first_time:
         return first_run()
