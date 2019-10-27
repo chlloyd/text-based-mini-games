@@ -3,7 +3,7 @@ firstTurn = True
 def survive(a):
     name = a.lower()
     global firstTurn
-    if firstTurn == True and name != 'exit':
+    if firstTurn == True and name != '/reset':
         firstTurn = False
         return"Welcome to Jurassic Par- Wait thats copyrighted \nWelcome to HackTheMidlands \nYour task is to take part in hack the midlands without angering Tom\n Depending on your choices and options it could mean game over \nto play the game you enter the choice you would like to pick while including any previous choices , so if you pick the third choice after the first you would send 13 just type '/help' for more info \nYour objective should you be bothered is to leave hackthemidlands by learning the door codes \nYou have 3 options to acquire informatin \nYou can take part in the capture the flag with option 1 \nYou can take part in the seminars for option 2\nYou can work on your project for option 3 \nFinally you can try and leave the building with- option 4"
     else:
@@ -77,7 +77,7 @@ def survive(a):
         elif name=="push":return"You push the door opening forgetting there is no lock as you can leave at anytime and it was a push door you was pulling on"
 
         elif name=="4push":return"You push the door opening forgetting there is no lock as you can leave at anytime and it was a push door you was pulling on"
-        elif name=="exit":return"reset"
+        elif name=="/reset":return"/reset"
         else:return"Thats not a option :("
 
 
