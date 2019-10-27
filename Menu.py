@@ -63,8 +63,8 @@ def main():
     return str(resp)
 
 def HangmanInit(UserAction):
-    #retVal = hangman.run_game(UserAction)
-    retVal = "Hangman Initiated"
+    retVal = hangman.run_game(UserAction)
+    #retVal = "Hangman Initiated"
     return retVal
 
 def SurviveInit(UserAction):
