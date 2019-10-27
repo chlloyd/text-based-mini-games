@@ -57,7 +57,6 @@ def first_run():
 
 
 def run_game(letter):
-    letter = letter.upper()
     global hearts
     if first_time:
         return first_run()
