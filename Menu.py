@@ -43,7 +43,7 @@ def main():
         currentGame = "Hangman"
     elif bodyLower == '/play survive' and currentGame != "Hangman":
         currentGame = "Survive"
-    elif bodyLower == '/reset':
+    elif bodyLower == '/reset' and currentGame == "Nothing":
         currentGame = "Nothing"
         resp.message("Thanks for playing!")
         start = False
