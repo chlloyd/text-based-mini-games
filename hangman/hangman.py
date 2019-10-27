@@ -34,7 +34,7 @@ def hanging_man(hearts):
 
 def first_message(word):
     return "Welcome to hangman. Your word is " + str(
-        len(word)) + " letters long. \nYou currently have 10 lives left. \n" + LIVES[0] +"Enter your first letter! \n"
+        len(word)) + " letters long. \nYou currently have 10 lives left. \n" + LIVES[0] + "Enter your first letter! \n"
 
 
 def first_run():
@@ -49,14 +49,12 @@ def first_run():
 
 def run_game(letter):
     global hearts
-    print(first_time)
     if first_time:
-         return first_run()
+        return first_run()
     else:
         if letter in word:
             letters.append(letter)
-            return hanging_man(hearts) + "\n" + display_letters(letters)
+            return hanging_man(hearts) + "You have " + str(hearts) + " lives left \n" + display_letters(letters)
         else:
             hearts -= 1
-            return hanging_man(hearts) + "You have" + str(hearts) + "lives left \n" + display_letters(letters)
-
+            return hanging_man(hearts) + "You have " + str(hearts) + " lives left \n" + display_letters(letters)
