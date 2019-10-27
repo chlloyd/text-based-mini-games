@@ -52,7 +52,7 @@ def main():
     if currentGame == 'Hangman':
             hangmanResponse = HangmanInit(bodyLower)
             print(resp.message)
-            if hangmanResponse == "You failed. Try again next time" or hangmanResponse == "Well Done! You beat hangman":
+            if hangmanResponse == "You failed. Try again next time" or hangmanResponse == "Well Done! You beat hangman" or hangmanResponse == "/reset":
                 currentGame = "Nothing"
                 hangmanResponse += "\n\nThanks for playing!"
                 start = False
@@ -68,6 +68,8 @@ def main():
     return str(resp)
 
 def HangmanInit(UserAction):
+    if UserAction == "/reset":
+        return "/reset"
     retVal = hangman.run_game(UserAction)
     return retVal
 
