@@ -70,7 +70,7 @@ def main():
     elif currentGame == 'Survive':
             surviveResponse = SurviveInit(bodyLower)
             print(surviveResponse)
-            if surviveResponse == "You push the door opening forgetting there is no lock as you can leave at anytime and it was a push door you was pulling on":
+            if surviveResponse == "You push the door open. You remember there is no lock on the doors and you could have left at anytime. It was a push door and you were pulling on it. Congratulations you have escaped":
                 currentGame = "Nothing"
                 surviveResponse += "\n\nTo be continued..."
                 surviveResponse += "\n\nThanks for playing!"
