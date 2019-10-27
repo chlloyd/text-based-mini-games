@@ -8,7 +8,7 @@ def survive(a):
         return"Welcome to Jurassic Par- Wait thats copyrighted \nWelcome to HackTheMidlands \nYour task is to take part in hack the midlands without angering Tom\n Depending on your choices and options it could mean game over \nto play the game you enter the choice you would like to pick while including any previous choices , so if you pick the third choice after the first you would send 13 just type '/help' for more info \nYour objective should you be bothered is to leave hackthemidlands by learning the door codes \nYou have 3 options to acquire informatin \nYou can take part in the capture the flag with option 1 \nYou can take part in the seminars for option 2\nYou can work on your project for option 3 \nFinally you can try and leave the building with- option 4"
     else:
         if name=="1":
-            return"You have decided to take part in the capture the flag and you remember them saying about the awnser being on your lanyard, you have 4 options, 1: you can attemept to brute force you way through the code, 2: you attempt to listen in to other people working on it hoping you hear the awnser , 3: You attempt to work on something from your lanyard , 4: you attempt to intemeditate someone for the password  "
+            return"You have decided to take part in the capture the flag and you remember them saying about the awnser being on your lanyard, you have 4 options, 1: you can attemept to brute force you way through the code, 2: you attempt to listen in to other people working on it hoping you hear the awnser , 3: You attempt to work on something from your lanyard , 4: you attempt to intimidate someone for the password  "
 
         elif name == "/help":return"The game works by inputing your previous options and your next one for example if you previosuly chose the 3rd option then the 2nd and wish to then choose the 3rd for your current option you should enter 323, if you wish to go back to the previous option just remove the last number and it should bring it back to the previous area"
 
@@ -78,6 +78,6 @@ def survive(a):
 
         elif name=="4push":return"You push the door opening forgetting there is no lock as you can leave at anytime and it was a push door you was pulling on"
         elif name=="/reset":return"/reset"
-        else:return"Thats not a option :("
+        else:return"Thats not a option :( \n enter '/help' for info"
 
 
