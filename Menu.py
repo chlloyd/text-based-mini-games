@@ -64,6 +64,8 @@ def main():
                 start = False
                 resp.message(hangmanResponse)
                 return str(resp)
+            resp.message(hangmanResponse)
+            return str(resp)
     elif currentGame == 'Survive':
             resp.message(SurviveInit(bodyLower))
             print(resp.message)
