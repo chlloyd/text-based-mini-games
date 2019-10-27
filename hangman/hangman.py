@@ -29,6 +29,7 @@ def display_letters(letters):
 
 
 def display_used_letters(used_letters):
+    used_letter = ""
     for letter in used_letters:
         used_letter = letter + " "
     return used_letter
@@ -78,7 +79,7 @@ def run_game(letter):
                 return "You failed. Try again next time"
             else:
                 return hanging_man(hearts) + "You have " + str(hearts) + " lives left \n" + display_letters(
-                    letters) + "\n Used letters: " + display_used_letters(used_letters)
+                    letters) + "\nUsed letters: " + display_used_letters(used_letters)
 
 
 def reset():
