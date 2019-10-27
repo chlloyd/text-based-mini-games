@@ -78,7 +78,9 @@ def survive(a):
         elif name=="push":return"You push the door open. You remember there is no lock on the doors and you could have left at anytime. It was a push door and you were pulling on it. Congratulations you have escaped" + u"🤦‍♀️"
 
         elif name=="4push":return"You push the door open. You remember there is no lock on the doors and you could have left at anytime. It was a push door and you were pulling on it. Congratulations you have escaped" + u"🤦‍♀️"
-        elif name=="/reset":return"/reset"
+        elif name=="/reset":
+            firstTurn = True
+            return"/reset"
         else:return"Thats not a option " + u"😢" + "\n enter '/help' for info"
 
 
