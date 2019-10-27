@@ -77,7 +77,7 @@ def main():
                 start = False
                 resp.message(surviveResponse)
                 return str(resp)
-            elif surviveResponse == "exit":
+            elif surviveResponse == "/reset":
                 currentGame = "Nothing"
                 surviveResponse = "Tom waits for your return...\n\nThanks for playing!"
                 start = False

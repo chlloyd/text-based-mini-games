@@ -1,16 +1,16 @@
 firstTurn = True
 
 def survive(a):
-    name = a
+    name = a.lower()
     global firstTurn
-    if firstTurn == True:
+    if firstTurn == True and name != 'exit':
         firstTurn = False
-        return"Welcome to Jurassic Par- Wait thats copyrighted \n Welcome to HackTheMidlands \n  Your task is to take part in all of the hack the midslands without angering Tom\n Depending on your choices and options it could mean game over \n to play the game you enter the choice you would like to pick while including any previous choices , so if you pick the third choice after the first you would send 13 just type HELP for more info \n Your objective should you be bothered is to leave hackthemidlands by learning the door codes \n You have 3 options to acquire informatin \nYou can take part in the capture the flag with option 1 \nYou can take part in the seminars for option 2\nYou can work on your project for option 3 \n Finally you can try and leave the building with- option 4"
+        return"Welcome to Jurassic Par- Wait thats copyrighted \nWelcome to HackTheMidlands \nYour task is to take part in hack the midlands without angering Tom\n Depending on your choices and options it could mean game over \nto play the game you enter the choice you would like to pick while including any previous choices , so if you pick the third choice after the first you would send 13 just type '/help' for more info \nYour objective should you be bothered is to leave hackthemidlands by learning the door codes \nYou have 3 options to acquire informatin \nYou can take part in the capture the flag with option 1 \nYou can take part in the seminars for option 2\nYou can work on your project for option 3 \nFinally you can try and leave the building with- option 4"
     else:
         if name=="1":
             return"You have decided to take part in the capture the flag and you remember them saying about the awnser being on your lanyard, you have 4 options, 1: you can attemept to brute force you way through the code, 2: you attempt to listen in to other people working on it hoping you hear the awnser , 3: You attempt to work on something from your lanyard , 4: you attempt to intemeditate someone for the password  "
 
-        elif name == "HELP":return"The game works by inputing your previous options and your next one for example if you previosuly chose the 3rd option then the 2nd and wish to then choose the 3rd for your current option you should enter 323, if you wish to go back to the previous option just remove the last number and it should bring it back to the previous area"
+        elif name == "/help":return"The game works by inputing your previous options and your next one for example if you previosuly chose the 3rd option then the 2nd and wish to then choose the 3rd for your current option you should enter 323, if you wish to go back to the previous option just remove the last number and it should bring it back to the previous area"
 
         elif name=="11":return"Your able to, through your own skils of hacking or maybe you just steal a program off the internet since thats easier, get the password for that challenege sorted , but after a breath of relief as that challenge was so easy , you feel a seperate breath behind you , you turn to see tom, with their  master hacking skills they must have found you brute forcing the website. He is displeased by this infraction and you have been sentenced to the data mines"
 
@@ -78,6 +78,6 @@ def survive(a):
 
         elif name=="4push":return"You push the door opening forgetting there is no lock as you can leave at anytime and it was a push door you was pulling on"
         elif name=="exit":return"reset"
-        else:return"Thats not a option :"
+        else:return"Thats not a option :("
 
 
