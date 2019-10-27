@@ -50,8 +50,13 @@ def main():
         return str(resp)
 
     if currentGame == 'Hangman':
-            resp.message(HangmanInit(bodyLower))
+            hangmanResponse = HangmanInit(bodyLower)
             print(resp.message)
+            if hangmanResponse == "You failed. Try again next time":
+                currentGame = "Nothing"
+                hangmanResponse += "\n\nThanks for playing!"
+                start = False
+            resp.message(hangmanResponse)
             return str(resp)
     elif currentGame == 'Survive':
             resp.message(SurviveInit(bodyLower))
@@ -64,7 +69,6 @@ def main():
 
 def HangmanInit(UserAction):
     retVal = hangman.run_game(UserAction)
-    #retVal = "Hangman Initiated"
     return retVal
 
 def SurviveInit(UserAction):
