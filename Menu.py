@@ -46,7 +46,8 @@ def main():
         currentGame = "Survive"
     elif bodyLower == '/reset' and currentGame == "Nothing":
         currentGame = "Nothing"
-        resp.message("Thanks for playing! " + u"😃")
+        resetString = "Thanks for playing!" + u"😃"
+        resp.message(resetString)
         start = False
         return str(resp)
 
