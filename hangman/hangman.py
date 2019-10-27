@@ -11,6 +11,7 @@ first_time = True
 word = ""
 letters = []
 hearts = 10
+used_letters = []
 
 
 def random_word():
@@ -25,6 +26,12 @@ def display_letters(letters):
         else:
             dashes += "-"
     return dashes
+
+
+def display_used_letters(used_letters):
+    for letter in used_letters:
+        used_letter = letter + " "
+    return used_letter
 
 
 def hanging_man(hearts):
@@ -63,12 +70,14 @@ def run_game(letter):
             else:
                 return hanging_man(hearts) + "You have " + str(hearts) + " lives left \n" + display_letters(letters)
         else:
+            used_letters.append(letter)
             hearts -= 1
             if hearts == 0:
                 reset()
                 return "You failed. Try again next time"
             else:
-                return hanging_man(hearts) + "You have " + str(hearts) + " lives left \n" + display_letters(letters)
+                return hanging_man(hearts) + "You have " + str(hearts) + " lives left \n" + display_letters(
+                    letters) + "\n Used letters: " + display_used_letters(used_letters)
 
 
 def reset():
@@ -76,7 +85,9 @@ def reset():
     global hearts
     global word
     global letters
+    global used_letters
     first_time = True
     hearts = 10
     word = ""
     letters = []
+    used_letters = []
