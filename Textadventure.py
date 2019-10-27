@@ -1,13 +1,10 @@
 
 
-def function(a):
+def survive(a):
     name = a
     if name=="":
         return"Welcome to Jurassic Par- Wait thats copyrighted \n Welcome to HackTheMidlands \n  Your task is to take part in all of the hack the midslands without angering Tom\n Depending on your choices and options it could mean game over \n to play the game you enter the choice you would like to pick while including any previous choices , so if you pick the third choice after the first you would send 13 just type HELP for more info \n Your objective should you be bothered is to leave hackthemidlands by learning the door codes \n You have 3 options to acquire informatin \nYou can take part in the capture the flag with option 1 \nYou can take part in the seminars for option 2\nYou can work on your project for option 3 \n Finally you can try and leave the building with- option 4"
-
     else:
-
-
         if name=="1":
             return"You have decided to take part in the capture the flag and you remember them saying about the awnser being on your lanyard, you have 4 options, 1: you can attemept to brute force you way through the code, 2: you attempt to listen in to other people working on it hoping you hear the awnser , 3: You attempt to work on something from your lanyard , 4: you attempt to intemeditate someone for the password  "
 

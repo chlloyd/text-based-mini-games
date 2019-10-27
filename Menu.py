@@ -3,6 +3,7 @@ from twilio.twiml.messaging_response import MessagingResponse
 import os
 
 from hangman import hangman
+from Textadventure import survive
 
 app = Flask(__name__)
 
@@ -67,8 +68,22 @@ def main():
             resp.message(hangmanResponse)
             return str(resp)
     elif currentGame == 'Survive':
-            resp.message(SurviveInit(bodyLower))
-            print(resp.message)
+            surviveResponse = SurviveInit(bodyLower)
+            print(surviveResponse)
+            if surviveResponse == "You push the door opening forgetting there is no lock as you can leave at anytime and it was a push door you was pulling on":
+                currentGame = "Nothing"
+                surviveResponse += "\n\nTo be continued..."
+                surviveResponse += "\n\nThanks for playing!"
+                start = False
+                resp.message(surviveResponse)
+                return str(resp)
+            elif surviveResponse == "exit":
+                currentGame = "Nothing"
+                surviveResponse = "Tom waits for your return...\n\nThanks for playing!"
+                start = False
+                resp.message(surviveResponse)
+                return str(resp)
+            resp.message(surviveResponse)
             return str(resp)
     else:
         resp.message("Error no game selected")
@@ -80,8 +95,8 @@ def HangmanInit(UserAction):
     return retVal
 
 def SurviveInit(UserAction):
-    print("Survive Initialised")
-    return 'This is Survive The Midlands!'
+    retVal = survive(UserAction)
+    return retVal
 
 
 if __name__ == "__main__":
