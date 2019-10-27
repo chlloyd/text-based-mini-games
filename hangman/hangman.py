@@ -42,6 +42,7 @@ def first_run():
 
 
 def run_game(letter):
+    print(letter)
     first_run()
     hearts = 10
     if letter in word:
