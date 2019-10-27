@@ -36,6 +36,7 @@ def first_run():
     global word
     word = random_word()
     message = first_message(word)
+    first_time = False
     return message
 
 
