@@ -54,7 +54,7 @@ def run_game(letter):
     else:
         if letter in word:
             letters.append(letter)
-            if "-" not in word:
+            if "-" not in display_letters(letters):
                 return "Well Done! You beat hangman"
             else:
                 return hanging_man(hearts) + "You have " + str(hearts) + " lives left \n" + display_letters(letters)
