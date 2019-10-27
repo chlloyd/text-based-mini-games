@@ -28,7 +28,7 @@ def display_letters(letters):
 
 def first_message(word):
     return "Welcome to hangman. Your word is " + str(
-        len(word)) + " letters long. \nYou currently have 10 lives left. \nEnter your first letter! \n" + LIVES[0]
+        len(word)) + " letters long. \nYou currently have 10 lives left. \n" + LIVES[0] +"Enter your first letter! \n"
 
 
 def first_run():
@@ -40,6 +40,7 @@ def first_run():
 
 
 def run_game(letter):
+    print(first_time)
     if first_time:
          return first_run()
     else:
