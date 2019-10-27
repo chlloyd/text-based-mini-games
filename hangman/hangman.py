@@ -34,20 +34,19 @@ def first_message(word):
 def first_run():
     global first_time
     global word
-    if first_time:
-        word = random_word()
-        message = first_message(word)
-        first_time = False
-        return message
+    word = random_word()
+    message = first_message(word)
+    return message
 
 
 def run_game(letter):
-    print(letter)
-    first_run()
-    hearts = 10
-    if letter in word:
-        letters.append(letter)
-        return display_letters(letters)
+    if first_time:
+         return first_run()
     else:
-        hearts -= 1
+        hearts = 10
+        if letter in word:
+            letters.append(letter)
+            return display_letters(letters)
+        else:
+            hearts -= 1
 
