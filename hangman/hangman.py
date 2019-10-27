@@ -53,18 +53,18 @@ def run_game(letter):
         return first_run()
     else:
         if letter in word:
-            letters.append(letter)
-            return hanging_man(hearts) + "You have " + str(hearts) + " lives left \n" + display_letters(letters)
+            if "-" not in display_letters(letters):
+                return "Well Done! You beat hangman"
+            else:
+                letters.append(letter)
+                return hanging_man(hearts) + "You have " + str(hearts) + " lives left \n" + display_letters(letters)
         else:
             hearts -= 1
             if hearts == 0:
                 reset()
                 return "You failed. Try again next time"
             else:
-                if "-" not in display_letters(letters):
-                    return "Well Done! You beat hangman"
-                else:
-                    return hanging_man(hearts) + "You have " + str(hearts) + " lives left \n" + display_letters(letters)
+                return hanging_man(hearts) + "You have " + str(hearts) + " lives left \n" + display_letters(letters)
 
 
 def reset():
