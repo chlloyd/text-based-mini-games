@@ -68,8 +68,6 @@ def main():
     return str(resp)
 
 def HangmanInit(UserAction):
-    if UserAction == "/reset":
-        return "/reset"
     retVal = hangman.run_game(UserAction)
     return retVal
 
