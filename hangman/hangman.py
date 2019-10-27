@@ -32,7 +32,10 @@ def display_used_letters(used_letters):
     used_letter = ""
     print(used_letters)
     for letter in used_letters:
-        used_letter += letter + ", "
+        if letter not in used_letter:
+            used_letter += letter + ", "
+        else:
+            pass
     return used_letter
 
 
