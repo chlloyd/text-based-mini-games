@@ -10,6 +10,7 @@ action_list = []
 first_time = True
 word = ""
 letters = []
+hearts = 10
 
 
 def random_word():
@@ -47,14 +48,15 @@ def first_run():
 
 
 def run_game(letter):
+    global hearts
     print(first_time)
     if first_time:
          return first_run()
     else:
-        hearts = 10
         if letter in word:
             letters.append(letter)
             return hanging_man(hearts) + "\n" + display_letters(letters)
         else:
             hearts -= 1
+            return hanging_man(hearts) + "You have" + str(hearts) + "lives left \n" + display_letters(letters)
 
