@@ -61,7 +61,7 @@ def main():
                 return str(resp)
             elif hangmanResponse == "/reset":
                 currentGame = "Nothing"
-                hangmanResponse = "Thanks for playing!"
+                hangmanResponse = "Thanks for playing!" + u"😃"
                 start = False
                 resp.message(hangmanResponse)
                 return str(resp)
@@ -72,14 +72,14 @@ def main():
             print(surviveResponse)
             if surviveResponse == "You push the door open. You remember there is no lock on the doors and you could have left at anytime. It was a push door and you were pulling on it. Congratulations you have escaped":
                 currentGame = "Nothing"
-                surviveResponse += "\n\nTo be continued..."
+                surviveResponse += "\n\nTo be continued..." + u"🤷‍♀️"
                 surviveResponse += "\n\nThanks for playing!"
                 start = False
                 resp.message(surviveResponse)
                 return str(resp)
             elif surviveResponse == "/reset":
                 currentGame = "Nothing"
-                surviveResponse = "Tom waits for your return...\n\nThanks for playing!"
+                surviveResponse = "Tom waits for your return...\n\nThanks for playing!" + u"😃"
                 start = False
                 resp.message(surviveResponse)
                 return str(resp)

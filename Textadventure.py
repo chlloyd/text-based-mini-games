@@ -5,7 +5,7 @@ def survive(a):
     global firstTurn
     if firstTurn == True and name != '/reset':
         firstTurn = False
-        return"Welcome to Jurassic Par- Wait thats copyrighted \nWelcome to HackTheMidlands \nYour task is to take part in hack the midlands without angering Tom\n Depending on your choices and options it could mean game over \nto play the game you enter the choice you would like to pick while including any previous choices , so if you pick the third choice after the first you would send 13 just type '/help' for more info \nYour objective should you be bothered is to leave hackthemidlands by learning the door codes \nYou have 3 options to acquire informatin \nYou can take part in the capture the flag with option 1 \nYou can take part in the seminars for option 2\nYou can work on your project for option 3 \nFinally you can try and leave the building with- option 4"
+        return"Welcome to Jurassic Par- Wait thats copyrighted \nWelcome to HackTheMidlands \nYour task is to take part in hack the midlands without angering Tom\nDepending on your choices and options it could mean game over \nTo play the game you enter the choice you would like to pick, while including any previous choices. So if you pick the third choice after the first, you would send '13'\n\nType '/help' for more info \n\nYour objective should you be bothered is to leave hackthemidlands by learning the door codes \nYou have 3 options to acquire information \nYou can take part in the capture the flag with option 1 \nYou can take part in the seminars for option 2\nYou can work on your project for option 3 \nFinally you can try and leave the building with- option 4"
     else:
         if name=="1":
             return"You have decided to take part in the capture the flag and you remember them saying about the awnser being on your lanyard, you have 4 options, 1: you can attemept to brute force you way through the code, 2: you attempt to listen in to other people working on it hoping you hear the awnser , 3: You attempt to work on something from your lanyard , 4: you attempt to intimidate someone for the password  "
@@ -74,10 +74,10 @@ def survive(a):
         elif name=="4":
             return"You walk towards and attempt to pull them open but they do not budge , you see a keypad on the side of a wall but do not know the combination. What do you do?"
 
-        elif name=="push":return"You push the door open. You remember there is no lock on the doors and you could have left at anytime. It was a push door and you were pulling on it. Congratulations you have escaped"
+        elif name=="push":return"You push the door open. You remember there is no lock on the doors and you could have left at anytime. It was a push door and you were pulling on it. Congratulations you have escaped" + u"🤦‍♀️"
 
-        elif name=="4push":return"You push the door open. You remember there is no lock on the doors and you could have left at anytime. It was a push door and you were pulling on it. Congratulations you have escaped"
+        elif name=="4push":return"You push the door open. You remember there is no lock on the doors and you could have left at anytime. It was a push door and you were pulling on it. Congratulations you have escaped" + u"🤦‍♀️"
         elif name=="/reset":return"/reset"
-        else:return"Thats not a option " + () + "\n enter '/help' for info"
+        else:return"Thats not a option " + u"😢" + "\n enter '/help' for info"
 
 
