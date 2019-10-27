@@ -26,6 +26,11 @@ def display_letters(letters):
     return dashes
 
 
+def hanging_man(hearts):
+    i = 10 - hearts
+    return LIVES[i]
+
+
 def first_message(word):
     return "Welcome to hangman. Your word is " + str(
         len(word)) + " letters long. \nYou currently have 10 lives left. \n" + LIVES[0] +"Enter your first letter! \n"
@@ -35,6 +40,7 @@ def first_run():
     global first_time
     global word
     word = random_word()
+    print(word)
     message = first_message(word)
     first_time = False
     return message
@@ -48,7 +54,7 @@ def run_game(letter):
         hearts = 10
         if letter in word:
             letters.append(letter)
-            return display_letters(letters)
+            return hanging_man(hearts) + "\n" + display_letters(letters)
         else:
             hearts -= 1
 
