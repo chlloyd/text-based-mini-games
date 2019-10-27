@@ -51,6 +51,9 @@ def run_game(letter):
     global hearts
     if first_time:
         return first_run()
+    elif letter == "/reset":
+        reset()
+        return "/reset"
     else:
         if letter in word:
             letters.append(letter)
