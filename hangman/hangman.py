@@ -57,4 +57,7 @@ def run_game(letter):
             return hanging_man(hearts) + "You have " + str(hearts) + " lives left \n" + display_letters(letters)
         else:
             hearts -= 1
-            return hanging_man(hearts) + "You have " + str(hearts) + " lives left \n" + display_letters(letters)
+            if hearts == 0:
+                return "You failed. Try again next time"
+            else:
+                return hanging_man(hearts) + "You have " + str(hearts) + " lives left \n" + display_letters(letters)
