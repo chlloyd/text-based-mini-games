@@ -27,7 +27,7 @@ def main():
     bodyLower = body.lower()
 
     if start == False:
-        if bodyLower == '/start game':
+        if bodyLower == '/start':
             message = "Hello and welcome to Text Based Mini Games by Murray's Angels"
             message += "\n\nPlease enter one of the following options;"
             message += "\n\n'/Play Hangman' - A simple game of Hangman"
@@ -36,7 +36,7 @@ def main():
             start = True
             return str(resp)
         else:
-            resp.message("Please enter one of the following commands; \n - '/Start Game'")
+            resp.message("Please enter one of the following commands; \n - '/Start'")
             return str(resp)
 
     if bodyLower == '/play hangman' and currentGame != "Survive":
