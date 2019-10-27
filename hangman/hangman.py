@@ -68,7 +68,8 @@ def run_game(letter):
                 reset()
                 return "Well Done! You beat hangman"
             else:
-                return hanging_man(hearts) + "You have " + str(hearts) + " lives left \n" + display_letters(letters)
+                return hanging_man(hearts) + "You have " + str(hearts) + " lives left \n" + display_letters(
+                    letters) + "\nUsed Letters: " + display_used_letters(used_letters)
         else:
             used_letters.append(letter)
             hearts -= 1
