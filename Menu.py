@@ -3,7 +3,7 @@ from twilio.twiml.messaging_response import MessagingResponse
 import os
 
 from hangman import hangman
-from RPGGame import survive
+from textAdventure import Game
 
 app = Flask(__name__)
 
@@ -92,12 +92,10 @@ def main():
     return str(resp)
 
 def HangmanInit(UserAction):
-    retVal = hangman.run_game(UserAction)
-    return retVal
+    return hangman.run_game(UserAction)
 
 def SurviveInit(UserAction):
-    retVal = survive(UserAction)
-    return retVal
+    return game.run_game(UserAction)
 
 
 if __name__ == "__main__":
