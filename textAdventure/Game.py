@@ -1,6 +1,6 @@
 firstTurn = True
 
-def survive(a):
+def run_game(a):
     name = a.lower()
     global firstTurn
     print(firstTurn)
